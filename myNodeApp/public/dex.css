@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+}
+
+header {
+    margin-bottom: 20px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    font-size: larger;
+}
+
+header h1 {
+    font-size: 80px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: left;
+}
+
+
+.dex, .userinfo {
+    max-width: 600px; 
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    width: 100%;  
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+select, input[type="number"], button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Style the button */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    
+}
+
+.swap {
+    text-align: center; 
+}
+
+.swap button {
+    margin: 20px 20px 20px 20px; 
+}
+
+
+button:hover {
+    background: #0056b3;
+}
+
+#exchange-rate, #swap-result {
+    padding: 20px;
+    color: #007bff;
+    font-size: 20px;
+    
+}
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="text/javascript"></script>
+    <script src="dex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="dex.css">
+    <title>DEX</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Decentralized Exchange</h1>
+        Swap tokens on CPAMM and CLAMM
+    </header>
+    <div class="card-container">
+        <div class="chart" id="pool-chart">
+            <canvas id="pool-pie-chart" width="700" height="700"></canvas>
+        </div>
+        <div class="dex">
+            <!-- Let user choose LP -->
+            <div class="liquidity-pool">
+                <h2>Liquidity Pool</h2>
+                <select id="lp" onchange="chooseLP()">
+                    <option value="0">CPAMM</option>
+                    <option value="1">CLAMM</option>
+                </select>
+            </div>
+    
+            <!-- Select coins to swap -->
+            <div class="swap">
+                <h3>Token Spent：</h3>
+                <select id="swap-from" onchange="calculateAmount('from')" onchange="getExchangeRate()">
+                    <option value="0">TokenA</option>
+                    <option value="1">TokenB</option>
+                </select>
+                <input type="number" id="swap-from-amount" placeholder="Amount" oninput="calculateAmount('from')" onchange="getExchangeRate()"/>
+                <div class="line"></div>
+                <h3>Token Received：</h3>
+                <select id="swap-to" onchange="calculateAmount('to')" onchange="getExchangeRate()">
+                    <option value="0">TokenA</option>
+                    <option value="1">TokenB</option>
+                </select>
+                <input type="number" id="swap-to-amount" placeholder="Amount" oninput="calculateAmount('to')" onchange="getExchangeRate()"/>
+                <button onclick="swap()">Swap</button>
+                <button onclick="connectWallet()">Connect Wallet</button>
+                <div id="walletAddress"></div>
+                <div id="exchange-rate"></div>
+            </div>   
+        </div>
+        <!-- swap info -->
+        <div class="swap-result">
+            <h3>Swap Info</h3>
+            <div id="swap-info"></div>
+        </div> 
+    </div>
+</body>
+</html>
